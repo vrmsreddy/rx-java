@@ -1,8 +1,6 @@
 package com.ms.reactive;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -29,14 +27,7 @@ public class StockService {
 	
     Executor executor = new ThreadPoolExecutor(10, 10, 0L, TimeUnit.MICROSECONDS, new LinkedBlockingQueue<>(100));
     Scheduler scheduler= Schedulers.from(executor);
-    ArrayList<Stock> stocks = new ArrayList<Stock>();
     
-    /**
-     * 
-     */
-    public StockService() {
-    	Arrays.stream(quotes).forEach(quote -> {stocks.add(new Stock(quote));} );
-    }
     /**
      * @return
      */
